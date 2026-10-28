@@ -1,0 +1,11 @@
+services:
+  agora-bot:
+    build: .
+    container_name: agora-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
+    volumes:
+      - ./data:/app/data

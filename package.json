@@ -1,0 +1,13 @@
+{
+  "name": "agora-receptor-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Receptor de webhooks e bot para o Ágora",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
