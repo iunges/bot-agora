@@ -4,7 +4,7 @@ Serviço Node.js para receber eventos assinados do Ágora e responder a comandos
 
 ## Endereço público
 
-`https://SEU-NOME.fslab.dev` — substitua pelo subdomínio que você criar em Endereços na cloud do FSLab. O endereço e o acesso à VM ainda precisam ser configurados para este projeto.
+`https://bot-agora-iunges.app.fslab.dev/` — substitua pelo subdomínio que você criar em Endereços na cloud do FSLab. O endereço e o acesso à VM ainda precisam ser configurados para este projeto.
 
 ## Integrantes
 
@@ -30,7 +30,7 @@ Inicie com:
 npm start
 ```
 
-O processo escuta em `0.0.0.0` e a porta padrão é `3000`. Na VM, coloque `.env`, `Dockerfile`, `compose.yaml`, `package.json` e `server.js` na mesma pasta e inicie com `docker compose up -d --build`; a política `unless-stopped` mantém o serviço após reinícios. Crie em `cloud.fslab.dev` o endereço HTTPS apontando para o IP interno da VM e para essa porta. Cadastre no Ágora o webhook do bot como `https://SEU-NOME.fslab.dev/webhooks/agora`.
+O processo escuta em `0.0.0.0` e a porta padrão é `3000`. Na VM, coloque `.env`, `Dockerfile`, `compose.yaml`, `package.json` e `server.js` na mesma pasta e inicie com `docker compose up -d --build`; a política `unless-stopped` mantém o serviço após reinícios. Crie em `cloud.fslab.dev` o endereço HTTPS apontando para o IP interno da VM e para essa porta. Cadastre no Ágora o webhook do bot como `https://bot-agora-iunges.app.fslab.dev/webhooks/agora`.
 
 ## Comandos
 
@@ -48,9 +48,9 @@ O bot só responde a mensagens cujo texto começa com `!`; todas as respostas co
 Substitua o domínio de exemplo pelo endereço que você criou:
 
 ```bash
-curl https://SEU-NOME.fslab.dev/saude
-curl https://SEU-NOME.fslab.dev/eventos
-curl https://SEU-NOME.fslab.dev/falhas
+curl https://bot-agora-iunges.app.fslab.dev/saude
+curl https://bot-agora-iunges.app.fslab.dev/eventos
+curl https://bot-agora-iunges.app.fslab.dev/falhas
 ```
 
 `/eventos` e `/falhas` não exigem autenticação neste projeto de aula; mantenha apenas dados de teste e desligue ou proteja esses endpoints após a correção. Eventos, deduplicação, atividade, fila e falhas ficam salvos em `data/state.json`, montado como volume persistente no Compose, e são restaurados após reinício.
